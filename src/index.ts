@@ -11,7 +11,6 @@ type ArgInfo = {
     nodePath: string,
     entryPath: string,
     projectName: string,
-    type: number
 }
 
 
@@ -26,13 +25,12 @@ function argsParse(argv: Array<string>): ArgInfo {
         process.exit(1);
     }
 
-    const [nodePath, entryPath, projectName, type] = argv
+    const [nodePath, entryPath, projectName] = argv
 
     return {
         nodePath,
         entryPath,
         projectName,
-        type: Number(type)
     }
 
 }
@@ -67,7 +65,7 @@ async function checkExist(pjName: string) {
 
 async function start() {
 
-    const { projectName, type } = argsParse(process.argv);
+    const { projectName } = argsParse(process.argv);
 
     const dest = await checkExist(projectName);
 

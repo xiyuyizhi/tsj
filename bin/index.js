@@ -45,12 +45,11 @@ function argsParse(argv) {
         console.log(UsageInfo);
         process.exit(1);
     }
-    var nodePath = argv[0], entryPath = argv[1], projectName = argv[2], type = argv[3];
+    var nodePath = argv[0], entryPath = argv[1], projectName = argv[2];
     return {
         nodePath: nodePath,
         entryPath: entryPath,
         projectName: projectName,
-        type: Number(type)
     };
 }
 function userInteractive() {
@@ -97,14 +96,14 @@ function checkExist(pjName) {
 }
 function start() {
     return __awaiter(this, void 0, void 0, function () {
-        var _a, projectName, type, dest, src, jsonPath, pckJson;
-        return __generator(this, function (_b) {
-            switch (_b.label) {
+        var projectName, dest, src, jsonPath, pckJson;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
                 case 0:
-                    _a = argsParse(process.argv), projectName = _a.projectName, type = _a.type;
+                    projectName = argsParse(process.argv).projectName;
                     return [4 /*yield*/, checkExist(projectName)];
                 case 1:
-                    dest = _b.sent();
+                    dest = _a.sent();
                     src = path.join(__dirname, '../', '_template');
                     fse.copySync(src, dest, { overwrite: true });
                     jsonPath = path.join(dest, 'package.json');
