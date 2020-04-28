@@ -1,0 +1,17 @@
+{
+  "name": "tsj",
+  "version": "1.0.0",
+  "description": "the brief scaffold for typescript project",
+  "main": "src/index.ts",
+  "bin": "./bin/index.js",
+  "scripts": {
+    "build": "tsc --watch"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/fs-extra": "^8.1.0",
+    "@types/node": "^13.13.4",
+    "fs-extra": "^8.1.0"
+  }
+}
