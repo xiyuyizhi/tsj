@@ -1,6 +1,6 @@
 {
   "name": "tsj",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "the brief scaffold for typescript project",
   "main": "src/index.ts",
   "bin": "./bin/index.js",
